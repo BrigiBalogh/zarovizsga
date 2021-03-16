@@ -1,13 +1,29 @@
 package hu.nive.ujratervezes.zarovizsga.digitscounter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DigitsCounter {
 
 
     public int getCountOfDigits(String s) {
-        if (s.isEmpty() || s == null || notNumber(s)) {
+        if (s == null || notNumber(s) || s == "" || s.length() == 1) {
             throw new IllegalArgumentException(" The data is invalid");
         }
-        char[] c = s.toCharArray();
+
+        List<Character> digits = new ArrayList<>();
+
+
+        int count = 0;
+        for (char c : s.toCharArray()) {
+            if (!digits.contains(c + "")) {
+                count++;
+                digits.add(c);
+            }
+        }
+        return count;
+    }
+     /*  char[] c = s.toCharArray();
         for(int i =0; (c.length-1)>i;i++)
         {
             for(int j=i+1;c.length >j;j++)
@@ -33,8 +49,7 @@ public class DigitsCounter {
             i = index;
         }
         return count;
-    }
-
+    }*/
 
 
 
