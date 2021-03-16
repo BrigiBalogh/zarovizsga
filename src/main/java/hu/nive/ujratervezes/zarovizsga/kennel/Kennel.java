@@ -27,6 +27,25 @@ public class Kennel {
 
    }
 
-   public void playWith(String name, int hours)
+   public void playWith(String name, int hours){
+       Dog d = findByName(name);
+       d.play(hours);
+   }
 
+   public List<String> getHappyDogNames(int minHappiness){
+       List <String> ret = new ArrayList<>();
+       String min;
+       for (Dog dog : dogs){
+           if (dog.getHappiness()> minHappiness) {
+               ret.add(dog.getName());
+
+           }
+       }
+       return ret;
+
+   }
+
+    public List<Dog> getDogs() {
+        return dogs;
+    }
 }
