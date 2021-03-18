@@ -23,5 +23,4 @@ public class DigitsCounter {
         }
         return count;
     }
-
 }
