@@ -1,7 +1,7 @@
 package hu.nive.ujratervezes.zarovizsga.kennel;
 
 public abstract class Dog {
-    public int happiness = 0;
+    protected int happiness = 0;
     private String name;
 
     public Dog( String name)
@@ -12,6 +12,7 @@ public abstract class Dog {
     public int getHappiness() {
         return happiness;
     }
+    public void setHappiness(int happiness) { this.happiness = happiness; }
 
     public String getName() {
         return name;
