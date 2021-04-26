@@ -1,12 +1,13 @@
 package hu.nive.ujratervezes.zarovizsga.workhours;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class WorkHours {
 
     public String minWork(String file) {
 
-        ArrayList<Employee> employees = new ArrayList<>();
+        List<Employee> employees = new ArrayList<>();
         fileReader(file, employees);
 
         int minidx = 0;
@@ -19,7 +20,7 @@ public class WorkHours {
         return min.getName() + ": " + min.getDate();
     }
 
-    private void fileReader(String file, ArrayList<Employee> employees) {
+    private void fileReader(String file, List<Employee> employees) {
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
